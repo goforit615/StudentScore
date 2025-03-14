@@ -1,22 +1,21 @@
 package school;
 
-import javax.security.auth.Subject;
-import java.io.StreamCorruptedException;
+import java.util.ArrayList;
 
-public class Studnet {
-    private int studentId;
-    private String studentName;
-    private Subject majorSubjct;
+public class Student {
+    private int studentId;  // 학번
+    private String studentName; // 이름
+    private Subject majorSubject; // 필수 과목
 
     private ArrayList<Score> scoreList = new ArrayList<Score>();
 
-    public Student(int studentId, String studnet, Subject majorSubject) {
+    public Student(int studentId, String studentName, Subject majorSubject) {
         this.studentId = studentId;
-        this.studentName = studnet;
-        this.majorSubjct = majorSubject;
+        this.studentName = studentName;
+        this.majorSubject = majorSubject;
     }
 
-    public int addSubjectScore(Score score) {
+    public void addSubjectScore(Score score) {
         scoreList.add(score);
     }
 
@@ -37,7 +36,7 @@ public class Studnet {
     }
 
     public Subject getMajorSubject() {
-        return majorSubjct;
+        return majorSubject;
     }
 
     public void setMajorSubject(Subject majorSubject) {
